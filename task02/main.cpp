@@ -1,24 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int sum_of_digits(int number) {
+int count_number_digit(int number) {
 
 	number = number > 0 ? number : -number;
 
 	if (number < 10) {
-		return number;
+		return 1;
 	}
 
-	return sum_of_digits(number / 10) + number % 10;
+	return count_number_digit(number) + number % 10;
 }
 
 int main() {
 
 	int number;
-	cout << "Enter number: ";
+	cout << "Enter the number: ";
 	cin >> number;
 
-	cout << "Sum: " << sum_of_digits(number) << endl;
+	cout << count_number_digit(number) << endl;
 
 	system("pause");
 	return 0;
